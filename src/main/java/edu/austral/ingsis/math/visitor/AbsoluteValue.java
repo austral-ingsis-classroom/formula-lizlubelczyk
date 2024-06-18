@@ -1,19 +1,19 @@
 package edu.austral.ingsis.math.visitor;
 
-class AbsoluteValue implements Function{
+class AbsoluteValue implements Function {
 
-    private final Function value;
+  private final Function value;
 
-    public AbsoluteValue(Function value) {
-        this.value = value;
-    }
+  public AbsoluteValue(Function value) {
+    this.value = value;
+  }
 
-    @Override
-    public <T> T accept(Visitor<T> visitor) {
-        return visitor.visit(this);
-    }
+  @Override
+  public <T> T accept(Visitor<T> visitor) {
+    return visitor.visit(this);
+  }
 
-    public Function getValue() {
-        return value;
-    }
+  public Function getValue() {
+    return value;
+  }
 }
