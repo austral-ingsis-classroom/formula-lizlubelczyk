@@ -1,0 +1,65 @@
+@startuml
+
+interface Function {
+  {abstract} double evaluate(Map<String, Function> variables)
+  {abstract} String print()
+  {abstract} Set<String> getVariables()
+}
+
+class Addition {
+  Function left
+  Function right
+}
+
+class Substraction {
+  Function left
+  Function right
+}
+
+class Multiplication {
+  Function left
+  Function right
+}
+
+class Division {
+  Function left
+  Function right
+}
+
+class Potentiation {
+  Function base
+  Function exponent
+}
+
+class SquareRoot {
+  Function value
+}
+
+class AbsoluteValue {
+  Function value
+}
+
+class Negation {
+  Function value
+}
+
+class Value {
+  double value
+}
+
+class Variable {
+  String name
+}
+
+Function <|.. Addition
+Function <|.. Substraction
+Function <|.. Multiplication
+Function <|.. Division
+Function <|.. Potentiation
+Function <|.. SquareRoot
+Function <|.. AbsoluteValue
+Function <|.. Negation
+Function <|.. Value
+Function <|.. Variable
+
+@enduml

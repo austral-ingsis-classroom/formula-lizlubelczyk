@@ -1,0 +1,94 @@
+Here is a PlantUML diagram representing all the classes you provided:
+
+```plantuml
+@startuml
+
+interface Function {
+  {abstract} <T> T accept(Visitor<T> visitor)
+}
+
+interface Visitor<T> {
+  T visit(AbsoluteValue absoluteValue)
+  T visit(Addition addition)
+  T visit(Division division)
+  T visit(Multiplication multiplication)
+  T visit(Negation negation)
+  T visit(Potentiation potentiation)
+  T visit(SquareRoot squareRoot)
+  T visit(Substraction subtraction)
+  T visit(Value value)
+  T visit(Variable variable)
+}
+
+class Addition {
+  Function left
+  Function right
+}
+
+class Substraction {
+  Function left
+  Function right
+}
+
+class Multiplication {
+  Function left
+  Function right
+}
+
+class Division {
+  Function left
+  Function right
+}
+
+class Potentiation {
+  Function base
+  Function exponent
+}
+
+class SquareRoot {
+  Function value
+}
+
+class AbsoluteValue {
+  Function value
+}
+
+class Negation {
+  Function value
+}
+
+class Value {
+  double value
+}
+
+class Variable {
+  String name
+}
+
+class EvaluatorVisitor {
+  Map<String, Function> variables
+}
+
+class PrinterVisitor {
+}
+
+class VariableGetterVisitor {
+}
+
+Function <|.. Addition
+Function <|.. Substraction
+Function <|.. Multiplication
+Function <|.. Division
+Function <|.. Potentiation
+Function <|.. SquareRoot
+Function <|.. AbsoluteValue
+Function <|.. Negation
+Function <|.. Value
+Function <|.. Variable
+
+Visitor <|.. EvaluatorVisitor
+Visitor <|.. PrinterVisitor
+Visitor <|.. VariableGetterVisitor
+
+@enduml
+```
